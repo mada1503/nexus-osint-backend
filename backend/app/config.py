@@ -6,13 +6,13 @@ from typing import Optional
 class Settings(BaseSettings):
     SECRET_KEY: str = "change-me"
     ENVIRONMENT: str = "development"
-    CORS_ORIGINS: str = "http://localhost:5173"
+    CORS_ORIGINS: str = "*"
 
-    DATABASE_URL: str = "postgresql+asyncpg://nexus:nexus_secret@localhost:5432/nexussearch"
+    DATABASE_URL: str = "postgresql+asyncpg://nexus_user:nexus_password@localhost:5432/nexus_db"
 
     REDIS_URL: str = "redis://localhost:6379/0"
     CELERY_BROKER_URL: str = "redis://localhost:6379/0"
-    CELERY_RESULT_BACKEND: str = "redis://localhost:6379/1"
+    CELERY_RESULT_BACKEND: str = "redis://localhost:6379/0"
 
     # API Keys
     GOOGLE_API_KEY: str = ""
